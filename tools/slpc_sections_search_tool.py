@@ -8,6 +8,10 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
 
+# Default number of results to return from similarity search
+DEFAULT_TOP_K = 3
+
+
 @tool("SLPC Sections Search Tool")
 def search_slpc_sections(query: str) -> list[dict]:
     """
@@ -23,11 +27,10 @@ def search_slpc_sections(query: str) -> list[dict]:
     load_dotenv()
 
     # Resolve vector DB path
-    persist_dir = os.getenv("PERSIST_DIRECTORY_PATH")
-    if not persist_dir:
+    persist_dir_path = os.getenv("PERSIST_DIRECTORY_PATH")
+    if not persist_dir_path:
         raise EnvironmentError("❌ 'PERSIST_DIRECTORY_PATH' is not set in .env")
 
-    persist_dir_path = os.getenv("PERSIST_DIRECTORY_PATH")
     collection_name = os.getenv("SLPC_COLLECTION_NAME")
 
     embedding_function = HuggingFaceEmbeddings()
@@ -39,10 +42,8 @@ def search_slpc_sections(query: str) -> list[dict]:
         embedding_function=embedding_function
     )
 
-    top_k = 3 # can be passed as an argument for flexibility
-
     # Perform similarity search
-    docs = vector_db.similarity_search(query, k=top_k)
+    docs = vector_db.similarity_search(query, k=DEFAULT_TOP_K)
 
     # Format results
     return [
