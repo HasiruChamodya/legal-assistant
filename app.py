@@ -6,13 +6,13 @@ from crew import legal_assistant_crew
 
 load_dotenv()
 
-st.set_page_config(page_title="AI Legal Assistant", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="Sri Lankan AI Legal Assistant", page_icon="⚖️", layout="wide")
 
-st.title("⚖️ Personal AI Legal Assistant")
+st.title("⚖️ Sri Lankan AI Legal Assistant")
 st.markdown(
     "Enter a legal problem in plain English. This assistant will help you:\n"
     "- Understand the legal issue\n"
-    "- Find applicable IPC sections\n"
+    "- Find applicable SLPC sections\n"
     "- Retrieve matching precedent cases\n"
     "- Generate a formal legal document"
 )
