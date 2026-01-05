@@ -15,10 +15,10 @@ base_path = os.path.dirname(os.path.abspath(__file__))
 persist_directory_path = os.path.join(base_path, persist_directory_name)
 
 
-query = "What is the IPC section for Theft?"
+query = "What is the SLPC section for Theft?"
 
 db = Chroma(
-    collection_name="ipc_collection",
+    collection_name="slpc_collection",
     persist_directory=persist_directory_path,
     embedding_function=HuggingFaceEmbeddings()
 )

@@ -14,10 +14,10 @@ def run(user_input: str):
 
 if __name__ == "__main__":
     user_input = (
-        "A man broke into my house at night while my family was sleeping. "
+        "A man broke into my house in Colombo at night while my family was sleeping. "
         "He stole jewelry and cash from our bedroom. When I confronted him, "
         "he threatened me with a knife and ran away. We reported it to the police, "
-        "but I'm not sure which legal charges should be filed under IPC."
+        "but I'm not sure which legal charges should be filed under SLPC."
     )
 
     run(user_input)
