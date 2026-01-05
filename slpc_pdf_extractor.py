@@ -23,7 +23,7 @@ import pdfplumber
 
 
 # Configuration
-PDF_PATH = "data/slpc.pdf"  # Update this path to your SLPC PDF location
+PDF_PATH = "data/penal_code.pdf"  # Update this path to your SLPC PDF location
 OUTPUT_PATH = "slpc.json"
 
 
